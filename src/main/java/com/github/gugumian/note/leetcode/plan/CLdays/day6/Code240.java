@@ -27,6 +27,17 @@ package com.github.gugumian.note.leetcode.plan.CLdays.day6;
 public class Code240 {
 
     public boolean searchMatrix(int[][] matrix, int target) {
+        int row = matrix.length - 1;
+        int col = 0;
+        while (row > -1 && col < matrix[0].length) {
+            if (matrix[row][col] > target) {
+                row--;
+            } else if (matrix[row][col] == target) {
+                return true;
+            } else {
+                col++;
+            }
+        }
         return false;
     }
 

@@ -31,8 +31,17 @@ package com.github.gugumian.note.leetcode.plan.CLdays.day6;
 public class Code162 {
 
     public int findPeakElement(int[] nums) {
-
-        return 0;
+        int left = 0;
+        int right = nums.length - 1;
+        while (right > left) {
+            int mid = (left + right) >> 1;
+            if (nums[mid] > nums[mid + 1]) {
+                right = mid;
+            } else {
+                left = mid;
+            }
+        }
+        return left;
     }
 
 }
