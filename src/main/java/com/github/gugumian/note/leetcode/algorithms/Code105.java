@@ -43,7 +43,7 @@ public class Code105 {
                 stack.push(node.left);
             } else {
                 while (!stack.isEmpty() && stack.peek().val == inorder[index]) {
-                    stack.pop();
+                    node = stack.pop();
                     index++;
                 }
                 node.right = new TreeNode(preorder[i]);
